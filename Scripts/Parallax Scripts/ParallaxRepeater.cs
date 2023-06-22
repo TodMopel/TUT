@@ -7,7 +7,7 @@ namespace TodMopel
 {
 	public class ParallaxRepeater : MonoBehaviour
 	{
-		public Sprite sprite;
+		private Sprite sprite;
 		private Transform subject;
 		private SpriteRenderer spriteRenderer;
 
@@ -30,6 +30,7 @@ namespace TodMopel
 		{
 			subject = GetComponent<ParallaxEffect>().cam.transform;
 			spriteRenderer = GetComponent<SpriteRenderer>();
+			sprite = spriteRenderer.sprite;
 			myColor = spriteRenderer.color;
 			spriteRenderer.enabled = false;
 

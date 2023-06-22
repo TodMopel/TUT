@@ -45,6 +45,9 @@ namespace TodMopel {
 			bool stateControl = avatarAccrobatic.value && !avatarFixed.value && !avatarStunt.value && !avatarWalled.value;
 			if (stateControl && newValue < StaminaStat.StaminaValue.value)
 				newValue += Time.deltaTime;
+			stateControl = !avatarFixed.value && !avatarStunt.value && !avatarWalled.value;
+			if (stateControl && newValue < StaminaStat.StaminaValue.value)
+				newValue += Time.deltaTime / 3;
 			else if (Controller.onGround && !avatarStunt.value)
 				newValue += Time.deltaTime * 3;
 
