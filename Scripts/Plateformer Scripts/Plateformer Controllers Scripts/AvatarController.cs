@@ -21,11 +21,14 @@ namespace TodMopel
 		public float inputArrow;
 		//[HideInInspector]
 		public bool canMove, onGround, paused;
+		public bool autoRun;
 
 		private void Awake()
 		{
 			SetupGameStateManager();
 			SubscribeInputControls();
+			if (autoRun)
+				inputArrow = 1;
 		}
 
 		private void SetupGameStateManager()
@@ -58,7 +61,7 @@ namespace TodMopel
 
 		private void ArrowInput(InputAction.CallbackContext context)
 		{
-			if (CurrentGameStateInGame()) {
+			if (CurrentGameStateInGame() && !autoRun) {
 				inputArrow = context.ReadValue<float>();
 			}
 		}
@@ -75,7 +78,6 @@ namespace TodMopel
 			if (!firstClick) {
 				if (CurrentGameStateInGame()) {
 					StartCoroutine(InputActionPressed());
-					inputAction = true;
 				}
 			}
 		}
@@ -84,6 +86,7 @@ namespace TodMopel
 			inputActionStart = true;
 			yield return new WaitForEndOfFrame();
 			inputActionStart = false;
+			inputAction = true;
 		}
 
 		private void ActionInputUp(InputAction.CallbackContext context)

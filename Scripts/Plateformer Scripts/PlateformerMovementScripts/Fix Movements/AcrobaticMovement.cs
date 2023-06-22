@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace TodMopel {
 		private void ControlAccrobaticState()
 		{
 			if (fixComponent.ActionInput() && !fixComponent.FixAimReturnValidPosition() && fixComponent.CanEnterFixConditions())
-				triggerState = true;
+				StartCoroutine(trigg());
 			if (triggerState && fixComponent.ActionHoldInput())
 				avatarAcrobaticState.value = true;
 			else
@@ -31,6 +32,12 @@ namespace TodMopel {
 			//if (Controller.avatarProgressionStats.avatarAcrobaticState && fixComponent.IsGrounded()) { // break stamina if langing on acrobatic state
 			//	fixStaminaStat.currentFixStaminaValue = -.1f;
 			//}
+		}
+
+		private IEnumerator trigg()
+		{
+			yield return new WaitForEndOfFrame();
+			triggerState = true;
 		}
 	}
 }

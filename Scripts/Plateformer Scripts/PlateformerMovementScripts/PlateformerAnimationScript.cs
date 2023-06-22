@@ -46,14 +46,15 @@ public class PlateformerAnimationScript : MonoBehaviour
 		bool avatarGrounded = Controller.onGround;
 		if (avatarStunt.value) {
 			if (avatarGrounded)
-				return AvatarStuntGroundedAnimations;
+					return AvatarStuntGroundedAnimations;
 			return GetSpriteFromVerticalVelocity_RangeValue(AvatarStuntAirAnimations, jumpSpeed.value);
 		}
 		if (Controller.canMove) {
 			if (avatarFixed.value)
 				return GetSpriteFromVerticalVelocity_RangeValue(AvatarFixStayAnimations, -fixSpeed.value * 5);
 			if (avatarGrounded && Controller.inputArrow != 0) {
-				return AvatarRunAnimations;
+				if (avatarVelocityY <= 1 && avatarVelocityY >= -1)
+					return AvatarRunAnimations;
 			}
 			if (!avatarGrounded) {
 				if (avatarAcrobatic.value)

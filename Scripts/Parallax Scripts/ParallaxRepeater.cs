@@ -77,8 +77,6 @@ namespace TodMopel
 			Vector3 subjectPosition = subject.transform.position;
 			Vector3 currentPosition = currentChild.transform.position;
 			Vector3 horizontalChildPosition = horizontalChild.transform.position;
-			Vector3 verticalChildPosition = verticalChild.transform.position;
-			Vector3 cornerChildPosition = cornerChild.transform.position;
 
 			bool switchLeft = subjectPosition.x < currentPosition.x && horizontalChildPosition.x > currentPosition.x;
 			bool switchRight = subjectPosition.x > currentPosition.x && horizontalChildPosition.x < currentPosition.x;
@@ -89,6 +87,8 @@ namespace TodMopel
 				horizontalChild.transform.position = new Vector3(horizontalChildPosition.x + 2 * spriteSize.x * horizontalSwitchValue, horizontalChildPosition.y, horizontalChildPosition.z);
 				horizontalChildPosition = horizontalChild.transform.position;
 				if (repeatY) {
+					Vector3 verticalChildPosition = verticalChild.transform.position;
+					Vector3 cornerChildPosition = cornerChild.transform.position;
 					cornerChild.transform.position = new Vector3(cornerChildPosition.x + 2 * spriteSize.x * horizontalSwitchValue, cornerChildPosition.y, cornerChildPosition.z);
 					cornerChildPosition = cornerChild.transform.position;
 				}
@@ -103,6 +103,8 @@ namespace TodMopel
 			}
 
 			if (repeatY) {
+				Vector3 verticalChildPosition = verticalChild.transform.position;
+				Vector3 cornerChildPosition = cornerChild.transform.position;
 				bool switchDown = subjectPosition.y < currentPosition.y && verticalChildPosition.y > currentPosition.y;
 				bool switchUp = subjectPosition.y > currentPosition.y && verticalChildPosition.y < currentPosition.y;
 				float verticalSwitchValue = switchUp ? 1 : -1;
