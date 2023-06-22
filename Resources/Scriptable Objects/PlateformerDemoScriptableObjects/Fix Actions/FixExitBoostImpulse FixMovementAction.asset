@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d5d9c8373af461e9ad9dddcb3ff4d0, type: 3}
+  m_Name: FixExitBoostImpulse FixMovementAction
+  m_EditorClassIdentifier: 
+  fixMovementComponent: {fileID: 0}
+  fixExitBoostForce: {fileID: 11400000, guid: ae10058919b17425d9ecb554e4ffe7d8, type: 2}
+  fixExitBoostGravityScale: {fileID: 11400000, guid: 8c7cb55bc4cb74053a5bd34126b02f7a, type: 2}
+  minAngle: 65
+  maxAngle: 95
