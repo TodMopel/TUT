@@ -13,5 +13,10 @@ namespace TodMopel {
 
 			return currentSpriteList[frame];
 		}
+
+		public class AnimContainer {
+			public List<Sprite> spriteList;
+			public int frameRate;
+		}
 	}
 }
