@@ -14,6 +14,7 @@ namespace TodMopel {
 			return currentSpriteList[frame];
 		}
 
+		[System.Serializable]
 		public class AnimContainer {
 			public List<Sprite> spriteList;
 			public int frameRate;

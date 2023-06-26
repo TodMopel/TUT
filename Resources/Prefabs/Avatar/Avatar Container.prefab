@@ -140,6 +140,8 @@ MonoBehaviour:
   wallComponents: {fileID: 61414429039564238}
   staminaBool: {fileID: 11400000, guid: a28aabcf1374142f4b6bdf2b06671430, type: 2}
   staminaComponents: {fileID: 61414429039564236}
+  jumpBool: {fileID: 0}
+  jumpomponents: {fileID: 0}
 --- !u!114 &61414429039564274
 MonoBehaviour:
   m_ObjectHideFlags: 0

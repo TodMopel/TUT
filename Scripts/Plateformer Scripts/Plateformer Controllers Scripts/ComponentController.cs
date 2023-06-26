@@ -19,6 +19,10 @@ namespace TodMopel {
 		private bool staminaActive;
 		public PlateformerStaminaManagement staminaComponents;
 
+		public BoolVariable jumpBool;
+		private bool jumpActive;
+		public OneButtonJumpMovement jumpomponents;
+
 		private bool paused;
 
 		private void Start()
@@ -26,6 +30,7 @@ namespace TodMopel {
 			fixComponents.enabled = fixActive = fixBool.value;
 			wallComponents.enabled = wallActive = wallBool.value;
 			staminaComponents.enabled = staminaActive = staminaBool.value;
+			jumpomponents.enabled = jumpActive = jumpBool.value;
 		}
 
 		private void Update()
@@ -36,11 +41,18 @@ namespace TodMopel {
 				wallComponents.enabled = wallActive = wallBool.value;
 			if (staminaActive != staminaBool.value)
 				staminaComponents.enabled = staminaActive = staminaBool.value;
+			if (jumpActive != jumpBool.value)
+				jumpomponents.enabled = jumpActive = jumpBool.value;
 
 			if (paused != controller.paused) {
 				staminaComponents.enabled = wallComponents.enabled = fixComponents.enabled = paused;
 				paused = controller.paused;
 			}
+		}
+
+		public void DesactivateAllComponent()
+		{
+			jumpomponents.enabled = staminaComponents.enabled = wallComponents.enabled = fixComponents.enabled = false;
 		}
 	}
 }
