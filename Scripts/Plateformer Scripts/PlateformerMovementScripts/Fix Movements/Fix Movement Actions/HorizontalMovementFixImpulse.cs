@@ -21,7 +21,8 @@ namespace TodMopel
 		{
 			fixMovementComponent = GetFixMovementComponent(FixedObject);
 			fixImpulseTimer.ProcessTimer();
-			if (fixImpulseTimer.TimerIsRunning() || fixImpulseTimer.timerValue == 0) {
+			bool fixInpulseConditions = fixImpulseTimer.TimerIsRunning() && fixMovementComponent.HorizontalInputValue() != 0;
+			if (fixInpulseConditions || fixImpulseTimer.timerValue == 0) {
 				float fixAcceleration = FixAccelerationCurve.Evaluate(CalculSpeedValue(fixAccelerationValue.value));
 				float desiredDirection = fixMovementComponent.HorizontalInputValue();
 				Vector2 forwardFixDirection = fixMovementComponent.CollectForwardFixDirection();
