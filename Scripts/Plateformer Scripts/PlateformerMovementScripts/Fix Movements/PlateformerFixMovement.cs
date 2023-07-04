@@ -144,8 +144,10 @@ namespace TodMopel
 
 		private void DisconnectFixHangComponent()
 		{
-			fixHangPointComponent.hangRopeSegmentIndex = 0;
-			fixHangPointComponent.DisconnectCurrentFixPoint();
+			if (fixHangPointComponent) {
+				fixHangPointComponent.hangRopeSegmentIndex = 0;
+				fixHangPointComponent.DisconnectCurrentFixPoint();
+			}
 		}
 
 		private void CreateFixPoint()

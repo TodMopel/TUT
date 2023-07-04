@@ -76,7 +76,7 @@ namespace TodMopel
 		{
 			RaycastHit2D TestDownwardPlateforms = Physics2D.CircleCast(transform.position, .75f, transform.position * Vector2.down, -1.5f, Controller.PlateformLayer);
 
-			if (coyoteTimer.TimerIsRunning() || (Controller.Body.gravityScale == jumpGravityScale.value && !ActionHoldInput()) || (TestDownwardPlateforms && TestDownwardPlateforms.collider.CompareTag(Controller.PlateformTag)))
+			if (Controller.onGround || coyoteTimer.TimerIsRunning() || (Controller.Body.gravityScale == jumpGravityScale.value && !ActionHoldInput()) || (TestDownwardPlateforms && TestDownwardPlateforms.collider.CompareTag(Controller.PlateformTag)))
 				hasJump.value = false;
 		}
 

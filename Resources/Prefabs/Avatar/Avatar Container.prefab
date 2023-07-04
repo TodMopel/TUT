@@ -646,7 +646,9 @@ MonoBehaviour:
   - {fileID: 1417936105, guid: e20d95726806049efb82c9c52edaa596, type: 3}
   - {fileID: 262525032, guid: e20d95726806049efb82c9c52edaa596, type: 3}
   - {fileID: 1175583554, guid: e20d95726806049efb82c9c52edaa596, type: 3}
+  AvatarDeadAnimations: []
   frameRate: 16
+  avatarAlive: {fileID: 0}
   avatarFixed: {fileID: 11400000, guid: 62c5426f8d2324ce388b766306cceb2e, type: 2}
   wallGrab: {fileID: 11400000, guid: 40c2a0d8da73f463fa7208589e24dce5, type: 2}
   avatarStunt: {fileID: 11400000, guid: ba1fe47256fe64f70a119f23e09cc921, type: 2}

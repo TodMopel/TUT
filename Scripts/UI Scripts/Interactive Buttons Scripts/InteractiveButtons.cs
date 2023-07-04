@@ -23,14 +23,14 @@ namespace TodMopel
 		private Sprite[] ActionButtonSprites;
 
 		bool buttonVisible;
-		private void Awake()
+		private void Start()
 		{
+			SubscribeInputControls();
+			SetButtonsVisibility();
+
 			leftButtonImage.sprite = LeftButtonSprites[0];
 			rightButtonImage.sprite = RightButtonSprites[0];
 			actionButtonImage.sprite = ActionButtonSprites[0];
-
-			SubscribeInputControls();
-			SetButtonsVisibility();
 		}
 
 		private void SubscribeInputControls()
@@ -47,6 +47,15 @@ namespace TodMopel
 			StartCoroutine(FirstClickSecu());
 		}
 
+		private void OnEnable()
+		{
+			SubscribeInputControls();
+		}
+
+		private void OnDisable()
+		{
+			UnsubscribeInputControls();
+		}
 
 		private void OnDestroy()
 		{
@@ -67,13 +76,13 @@ namespace TodMopel
 
 		private void UnactionInput(InputAction.CallbackContext context)
 		{
-			actionButtonImage.sprite = ActionButtonSprites[0];
+			if (actionButtonImage)
+				actionButtonImage.sprite = ActionButtonSprites[0];
 		}
-
 
 		private void ActionInput(InputAction.CallbackContext context)
 		{
-			if (!firstClick)
+			if (!firstClick && actionButtonImage)
 				actionButtonImage.sprite = ActionButtonSprites[1];
 		}
 

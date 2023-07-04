@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6cc95865019473db5eb8d87976bbb5, type: 3}
-  m_Name: AvatarFixGravity
+  m_Script: {fileID: 11500000, guid: 30fbde6033690407fb51ebef9acb65f7, type: 3}
+  m_Name: DisconectOnAvatarDead FixMovementAction
   m_EditorClassIdentifier: 
-  value: 4.44
+  fixMovementComponent: {fileID: 0}
+  avatarAlive: {fileID: 11400000, guid: d3ea8349b80d84da2b838c0f83e3e533, type: 2}

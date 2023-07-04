@@ -40,4 +40,4 @@ MonoBehaviour:
   fixSpeedValue: {fileID: 11400000, guid: 30a06d87467584a35bb8fdc6dca34623, type: 2}
   fixAccelerationValue: {fileID: 11400000, guid: 164eb1b5056724ed7a74e6116c69e068, type: 2}
   fixImpulseTimer:
-    timerValue: 0
+    timerValue: 0.22

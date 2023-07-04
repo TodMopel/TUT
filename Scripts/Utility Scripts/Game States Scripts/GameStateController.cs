@@ -7,7 +7,8 @@ namespace TodMopel {
     {
 		private InputControls inputControls;
 
-		public GameObject PauseMenu, InGameHUD;
+		public GameObject[] DeactivateItems;
+		public GameObject[] ActivateItems;
 
 		private void Awake()
 		{
@@ -30,8 +31,13 @@ namespace TodMopel {
 		IEnumerator ChangeObjectState(bool pauseMenuActive)
 		{
 			yield return new WaitForEndOfFrame();
-			PauseMenu.SetActive(pauseMenuActive);
-			InGameHUD.SetActive(!pauseMenuActive);
+
+			for (int i = 0; i < DeactivateItems.Length; i++) {
+				DeactivateItems[i].SetActive(!pauseMenuActive);
+			}
+			for (int i = 0; i < ActivateItems.Length; i++) {
+				ActivateItems[i].SetActive(pauseMenuActive);
+			}
 		}
 
 		private void SetupInputControls()
@@ -49,7 +55,22 @@ namespace TodMopel {
 			GameStateManager.Instance.SetState(newGameState);
 		}
 
+		private void OnEnable()
+		{
+			SetupInputControls();
+		}
+
+		private void OnDisable()
+		{
+			UnsubscribeInputControls();
+		}
+
 		private void OnDestroy()
+		{
+			UnsubscribeInputControls();
+		}
+
+		private void UnsubscribeInputControls()
 		{
 			GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
 			inputControls.Player.Pause.started -= PauseInput;

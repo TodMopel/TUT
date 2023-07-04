@@ -23,6 +23,10 @@ namespace TodMopel
 		{
 			startPosition = transform.position;
 			startZ = transform.position.z;
+			if (!subject)
+				subject = GameObject.Find("Avatar Container").GetComponent<Transform>();
+			if (!cam)
+				cam = Camera.main;
 		}
 
 		private void Update()

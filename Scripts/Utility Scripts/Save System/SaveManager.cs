@@ -25,7 +25,7 @@ namespace TodMopel
                 string _jsonSave = File.ReadAllText((SAVE_FOLDER + "/" + saveName + "_saveFile.txt"));
                 return _jsonSave;
             } else {
-                Debug.Log("NoSaves");
+                Debug.Log("NoSaves Folder");
                 return null;
             }
         }

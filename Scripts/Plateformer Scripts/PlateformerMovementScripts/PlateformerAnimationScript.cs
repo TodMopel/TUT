@@ -17,10 +17,11 @@ public class PlateformerAnimationScript : MonoBehaviour
 	public List<Sprite> AvatarStuntAirAnimations;
 	public List<Sprite> AvatarStuntGroundedAnimations;
 	public List<Sprite> AvatarAcrobaticAnimations;
+	public List<Sprite> AvatarDeadAnimations;
 
 	public int frameRate;
 
-	public BoolVariable avatarFixed, wallGrab, avatarStunt, avatarAcrobatic;
+	public BoolVariable avatarAlive, avatarFixed, wallGrab, avatarStunt, avatarAcrobatic;
 	public FloatVariable fixSpeed, jumpSpeed;
 
 	private float avatarVelocityY => Controller.Body.velocity.y;
@@ -44,6 +45,8 @@ public class PlateformerAnimationScript : MonoBehaviour
 	private List<Sprite> SelectSpriteAnimation()
 	{
 		bool avatarGrounded = Controller.onGround;
+		if (!avatarAlive.value)
+			return AvatarDeadAnimations;
 		if (avatarStunt.value) {
 			if (avatarGrounded)
 					return AvatarStuntGroundedAnimations;
