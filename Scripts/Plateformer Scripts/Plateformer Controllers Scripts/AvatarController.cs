@@ -38,7 +38,6 @@ namespace TodMopel
 
 		private void OnGameStateChanged(GameState newGameState)
 		{
-			canMove = newGameState == GameState.InGame;
 			Body.simulated = newGameState == GameState.InGame;
 
 			paused = newGameState == GameState.Paused;
@@ -111,8 +110,11 @@ namespace TodMopel
 		{
 			inputControls.Player.Horizontal.started -= ArrowInput;
 			inputControls.Player.Horizontal.canceled -= ArrowInput;
+			inputControls.Player.Horizontal.Disable();
+
 			inputControls.Player.Action.started -= ActionInputDown;
 			inputControls.Player.Action.canceled -= ActionInputUp;
+			inputControls.Player.Action.Disable();
 		}
 	}
 }

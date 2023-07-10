@@ -64,13 +64,13 @@ namespace TodMopel
 
 		private void UnsubscribeInputControls()
 		{
-			inputControls.Player.Horizontal.Disable();
 			inputControls.Player.Horizontal.started -= ArrowInput;
 			inputControls.Player.Horizontal.canceled -= ArrowInput;
+			inputControls.Player.Horizontal.Disable();
 
-			inputControls.Player.Action.Disable();
 			inputControls.Player.Action.started -= ActionInput;
 			inputControls.Player.Action.canceled -= UnactionInput;
+			inputControls.Player.Action.Disable();
 		}
 
 
@@ -96,15 +96,17 @@ namespace TodMopel
 
 		private void ArrowInput(InputAction.CallbackContext context)
 		{
-			float arrowValue = context.ReadValue<float>();
-			if (arrowValue == 0) {
-				leftButtonImage.sprite = LeftButtonSprites[0];
-				rightButtonImage.sprite = RightButtonSprites[0];
-			} else {
-				if (arrowValue < 0) {
-					leftButtonImage.sprite = LeftButtonSprites[1];
-				} else if (arrowValue > 0) {
-					rightButtonImage.sprite = RightButtonSprites[1];
+			if (leftButtonImage && rightButtonImage) {
+				float arrowValue = context.ReadValue<float>();
+				if (arrowValue == 0) {
+					leftButtonImage.sprite = LeftButtonSprites[0];
+					rightButtonImage.sprite = RightButtonSprites[0];
+				} else {
+					if (arrowValue < 0) {
+						leftButtonImage.sprite = LeftButtonSprites[1];
+					} else if (arrowValue > 0) {
+						rightButtonImage.sprite = RightButtonSprites[1];
+					}
 				}
 			}
 		}

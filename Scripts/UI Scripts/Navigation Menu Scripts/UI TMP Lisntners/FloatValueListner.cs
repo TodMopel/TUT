@@ -24,7 +24,6 @@ namespace TodMopel
 		{
 			textValue.text = floatValue.value.ToString(floatFormat);
 			reminder = floatValue.value;
-			Debug.Log("coucou");
 		}
 	}
 }

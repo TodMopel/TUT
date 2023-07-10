@@ -45,9 +45,11 @@ namespace TodMopel
 		{
 			currentChild = CreateParallaxSprite(startPosition, Vector2.zero);
 			horizontalChild = CreateParallaxSprite(startPosition, Vector2.right);
+			currentChild.GetComponent<SpriteRenderer>().sortingOrder = horizontalChild.GetComponent<SpriteRenderer>().sortingOrder = spriteRenderer.sortingOrder;
 			if (repeatY) {
 				verticalChild = CreateParallaxSprite(startPosition, Vector2.up);
 				cornerChild = CreateParallaxSprite(horizontalChild.transform.position, Vector2.up);
+				verticalChild.GetComponent<SpriteRenderer>().sortingOrder = cornerChild.GetComponent<SpriteRenderer>().sortingOrder = spriteRenderer.sortingOrder;
 			}
 		}
 

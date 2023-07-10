@@ -37,13 +37,13 @@ namespace TodMopel {
 
 		private void UnsubscribeInputControls()
 		{
-			inputControls.UI_Selected.Horizontal.Disable();
 			inputControls.UI_Selected.Horizontal.started -= ArrowInput;
 			inputControls.UI_Selected.Horizontal.canceled -= ArrowInput;
+			inputControls.UI_Selected.Horizontal.Disable();
 
-			inputControls.UI_Selected.Action.Disable();
 			inputControls.UI_Selected.Action.started -= ActionInput;
 			inputControls.UI_Selected.Action.canceled -= UnactionInput;
+			inputControls.UI_Selected.Action.Disable();
 		}
 
 		private void OnEnable()
@@ -62,6 +62,7 @@ namespace TodMopel {
 		private void UnactionInput(InputAction.CallbackContext context)
 		{
 			if (!itemFocusedOption.value) {
+
 			}
 		}
 

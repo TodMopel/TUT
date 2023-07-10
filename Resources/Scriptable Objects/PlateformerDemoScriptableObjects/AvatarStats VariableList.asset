@@ -34,10 +34,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46cc0e50e794643eea46dc244651a204, type: 2}
   - {fileID: 11400000, guid: 5a27ecb8999464afba0cc23a73a7dd97, type: 2}
   - {fileID: 11400000, guid: a4321e13f4e1249d88575642a49df167, type: 2}
-  boolStatList:
-  - {fileID: 11400000, guid: 69984beed36054638aa474e8b73ae974, type: 2}
-  - {fileID: 11400000, guid: 3785dce9e326c4a33a04e7ad47aad6c7, type: 2}
-  - {fileID: 11400000, guid: 2d08c156627254b7ab9d07bed14a6edb, type: 2}
-  - {fileID: 11400000, guid: 6f43aa5cd2f914a6886da27d883169d9, type: 2}
-  - {fileID: 11400000, guid: a28aabcf1374142f4b6bdf2b06671430, type: 2}
+  boolStatList: []
   stringStatList: []
