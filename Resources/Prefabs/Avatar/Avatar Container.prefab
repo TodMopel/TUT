@@ -140,8 +140,8 @@ MonoBehaviour:
   wallComponents: {fileID: 61414429039564238}
   staminaBool: {fileID: 11400000, guid: a28aabcf1374142f4b6bdf2b06671430, type: 2}
   staminaComponents: {fileID: 61414429039564236}
-  jumpBool: {fileID: 0}
-  jumpomponents: {fileID: 0}
+  jumpBool: {fileID: 11400000, guid: 500a385375de64f2eb0f0ebda7e784aa, type: 2}
+  jumpomponents: {fileID: 61414429039564275}
 --- !u!114 &61414429039564274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,9 +646,10 @@ MonoBehaviour:
   - {fileID: 1417936105, guid: e20d95726806049efb82c9c52edaa596, type: 3}
   - {fileID: 262525032, guid: e20d95726806049efb82c9c52edaa596, type: 3}
   - {fileID: 1175583554, guid: e20d95726806049efb82c9c52edaa596, type: 3}
-  AvatarDeadAnimations: []
+  AvatarDeadAnimations:
+  - {fileID: 319089488, guid: a5d8c3737bcad4b6b930b3fe06ad0ede, type: 3}
   frameRate: 16
-  avatarAlive: {fileID: 0}
+  avatarAlive: {fileID: 11400000, guid: 52510efb4a582498cbcdd31ea2e1d092, type: 2}
   avatarFixed: {fileID: 11400000, guid: 62c5426f8d2324ce388b766306cceb2e, type: 2}
   wallGrab: {fileID: 11400000, guid: 40c2a0d8da73f463fa7208589e24dce5, type: 2}
   avatarStunt: {fileID: 11400000, guid: ba1fe47256fe64f70a119f23e09cc921, type: 2}
