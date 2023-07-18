@@ -21,6 +21,7 @@ public class PlateformerAnimationScript : MonoBehaviour
 
 	public int frameRate;
 
+	public BoolVariable canAnimate;
 	public BoolVariable avatarAlive, avatarFixed, wallGrab, avatarStunt, avatarAcrobatic;
 	public FloatVariable fixSpeed, jumpSpeed;
 
@@ -28,8 +29,10 @@ public class PlateformerAnimationScript : MonoBehaviour
 
 	private void Update()
 	{
-		avatarSpriteRenderer.sprite = AnimationSystem.PlaySpriteAnimation(SelectSpriteAnimation(), frameRate);
-		HandleSpriteDirection();
+		if (canAnimate.value) {
+			avatarSpriteRenderer.sprite = AnimationSystem.PlaySpriteAnimation(SelectSpriteAnimation(), frameRate);
+			HandleSpriteDirection();
+		}
 	}
 
 	private void HandleSpriteDirection()
