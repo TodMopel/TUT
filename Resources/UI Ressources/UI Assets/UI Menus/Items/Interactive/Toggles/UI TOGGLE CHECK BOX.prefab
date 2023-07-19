@@ -399,6 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navActions:
   - {fileID: 11400000, guid: d6b0a65f9a8bb4b779ee834a63b026a8, type: 2}
+  - {fileID: 11400000, guid: 05997c625dbc94edb9f97118a3344121, type: 2}
   MenuItemSpriteRenderer: {fileID: 7394997563213103763}
   UnselectedMenuItemSprite:
   - {fileID: 1469137153, guid: 5a6648cd7ca1045189d988009f8c6473, type: 3}

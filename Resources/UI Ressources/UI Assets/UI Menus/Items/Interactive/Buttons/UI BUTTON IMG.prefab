@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navActions:
   - {fileID: 11400000, guid: 4ab0f06e217334d0e8b8b0470c845cfd, type: 2}
+  - {fileID: 11400000, guid: 05997c625dbc94edb9f97118a3344121, type: 2}
   MenuItemSpriteRenderer: {fileID: 7745416782957755184}
   UnselectedMenuItemSprite:
   - {fileID: 1831561204, guid: 6c7f5c6b3c0c1463da31c98d844db222, type: 3}

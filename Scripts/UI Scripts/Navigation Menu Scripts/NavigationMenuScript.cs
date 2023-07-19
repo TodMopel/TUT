@@ -60,7 +60,7 @@ namespace TodMopel
 		private void OnDisable()
 		{
 			UnsubscribeInputControls();
-			if (!itemFocusedOption.value)
+			if (!itemFocusedOption.value && MenuItemList[menuIndex])
 				MenuItemList[menuIndex].Unselection();
 		}
 
@@ -72,7 +72,7 @@ namespace TodMopel
 
 		private void ActionInput(InputAction.CallbackContext context)
 		{
-			if (!firstClick)
+			if (!firstClick && MenuItemList[menuIndex])
 				MenuItemList[menuIndex].Action();
 		}
 

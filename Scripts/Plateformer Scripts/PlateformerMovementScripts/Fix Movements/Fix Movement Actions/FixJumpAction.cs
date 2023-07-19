@@ -30,9 +30,10 @@ namespace TodMopel
 				if (staminaStats) {
 					if (staminaStats.currentStaminaValue.value > staminaStats.lastStandStaminaValue) {
 						staminaStats.currentStaminaValue.value *= .75f;
+						JumpAction();
 					}
-				}
-				JumpAction();
+				} else
+					JumpAction();
 			}
 		}
 

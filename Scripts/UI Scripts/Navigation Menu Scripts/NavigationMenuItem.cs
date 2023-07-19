@@ -15,6 +15,8 @@ namespace TodMopel
 		private Image MenuItemSpriteRenderer;
 		[SerializeField]
 		private Sprite[] UnselectedMenuItemSprite, SelectedMenuItemSprite, PressedMenuItemSprite;
+		[HideInInspector]
+		public bool selected;
 
 		public void OnUnselectAction()
 		{
@@ -26,6 +28,7 @@ namespace TodMopel
 			for (int i = 0; i < navActions.Length; i++) {
 				navActions[i].OnUnselectionDo(gameObject);
 			}
+			selected = false;
 		}
 
 		public void OnSelectionAction()
@@ -34,9 +37,13 @@ namespace TodMopel
 		}
 		internal void Selection()
 		{
-			MenuItemSpriteRenderer.sprite = SelectedMenuItemSprite[0];
-			for (int i = 0; i < navActions.Length; i++) {
-				navActions[i].OnSelectionDo(gameObject);
+			if (!selected) {
+				MenuItemSpriteRenderer.sprite = SelectedMenuItemSprite[0];
+			
+				for (int i = 0; i < navActions.Length; i++) {
+					navActions[i].OnSelectionDo(gameObject);
+				}
+				selected = true;
 			}
 		}
 

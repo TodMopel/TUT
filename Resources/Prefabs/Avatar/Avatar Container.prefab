@@ -649,7 +649,7 @@ MonoBehaviour:
   AvatarDeadAnimations:
   - {fileID: 319089488, guid: a5d8c3737bcad4b6b930b3fe06ad0ede, type: 3}
   frameRate: 16
-  canAnimate: {fileID: 0}
+  canAnimate: {fileID: 11400000, guid: 516e57ae0943648a58cf8a501b71cd7a, type: 2}
   avatarAlive: {fileID: 11400000, guid: 52510efb4a582498cbcdd31ea2e1d092, type: 2}
   avatarFixed: {fileID: 11400000, guid: 62c5426f8d2324ce388b766306cceb2e, type: 2}
   wallGrab: {fileID: 11400000, guid: 40c2a0d8da73f463fa7208589e24dce5, type: 2}
@@ -793,6 +793,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 61414429067755351}
     m_Modifications:
+    - target: {fileID: 4251160062450319998, guid: 155b047077b4c4dd2bcc5aab15d59d70, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.0025
+      objectReference: {fileID: 0}
     - target: {fileID: 4251160062622070785, guid: 155b047077b4c4dd2bcc5aab15d59d70, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

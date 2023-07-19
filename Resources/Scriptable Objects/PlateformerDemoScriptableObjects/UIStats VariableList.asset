@@ -15,6 +15,9 @@ MonoBehaviour:
   SAVE_NAME: UI_Elements_Save
   floatStatList:
   - {fileID: 11400000, guid: b0c56d59930a047ea922e89a45c2f65b, type: 2}
+  - {fileID: 11400000, guid: 29e6ccf19de6d46deaf4e74cfa721948, type: 2}
+  - {fileID: 11400000, guid: ce63058409d594f07b002c96d78893dc, type: 2}
+  - {fileID: 11400000, guid: 1affc9e3fbac241b8b27404ade3ff409, type: 2}
   boolStatList:
   - {fileID: 11400000, guid: 3785dce9e326c4a33a04e7ad47aad6c7, type: 2}
   - {fileID: 11400000, guid: 7a5da136d30544686bf1a9788d8d9cd3, type: 2}

@@ -13,7 +13,7 @@ namespace TodMopel {
 		private void Awake()
 		{
 			SetupGameStateManager();
-			SetupInputControls();
+			SubscribeInputControls();
 			StartCoroutine(ChangeObjectState(GameStateManager.Instance.CurrentGameState == GameState.Paused));
 		}
 
@@ -25,7 +25,11 @@ namespace TodMopel {
 		private void OnGameStateChanged(GameState newGameState)
 		{
 			bool pauseMenuActive = newGameState == GameState.Paused ? true : false;
+
 			StartCoroutine(ChangeObjectState(pauseMenuActive));
+
+			//if (GameObject.Find("Master Container").GetComponent<MusicManagement>())
+				//GameObject.Find("Master Container").GetComponent<MusicManagement>().ChangeLowPassFilterFrequency(newGameState == GameState.Paused);
 		}
 
 		IEnumerator ChangeObjectState(bool pauseMenuActive)
@@ -40,7 +44,7 @@ namespace TodMopel {
 			}
 		}
 
-		private void SetupInputControls()
+		private void SubscribeInputControls()
 		{
 			inputControls = new InputControls();
 
@@ -57,15 +61,10 @@ namespace TodMopel {
 
 		private void OnEnable()
 		{
-			SetupInputControls();
+			SubscribeInputControls();
 		}
 
 		private void OnDisable()
-		{
-			UnsubscribeInputControls();
-		}
-
-		private void OnDestroy()
 		{
 			UnsubscribeInputControls();
 		}
@@ -74,6 +73,7 @@ namespace TodMopel {
 		{
 			GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
 			inputControls.Player.Pause.started -= PauseInput;
+			inputControls.Player.Pause.Disable();
 		}
 	}
 }
